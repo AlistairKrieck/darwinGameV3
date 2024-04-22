@@ -38,10 +38,12 @@ namespace darwinGameV1
 
     //REBALANCE MUTATIONS <- Still Big
 
+
     public partial class darwin : Form
     {
         bool escDown = false;
         bool kDown = false;
+        bool backDown = false;
 
         int currentGeneration = 0;
 
@@ -133,7 +135,9 @@ namespace darwinGameV1
                     break;
 
                 case Keys.Escape:
-                    this.Close();
+                    {
+                        this.Close();
+                    }
                     break;
 
                 case Keys.D1:
@@ -159,6 +163,16 @@ namespace darwinGameV1
                         this.BackColor = Color.FromName("LemonChiffon");
                     }
                     break;
+
+                case Keys.Back:
+                    {
+                        if (backDown == false)
+                        {
+                            GameInit();
+                            backDown = true;
+                        }
+                    }
+                    break;
             }
         }
 
@@ -175,6 +189,12 @@ namespace darwinGameV1
                 case Keys.K:
                     {
                         kDown = false;
+                    }
+                    break;
+
+                case Keys.Tab:
+                    {
+                        backDown = false;
                     }
                     break;
             }
@@ -204,7 +224,7 @@ namespace darwinGameV1
 
                 pastMutationsLabel.Visible = false;
 
-                startLabel.Text = "Press Enter to Start!";
+                startLabel.Text = "Press Enter to Start! Press Backspace to Restart at Any Time!";
                 nameBoxLabel.Text = "Name Your Creature!";
             }
 
@@ -324,6 +344,7 @@ namespace darwinGameV1
             generation.SubItems.Add($"{possibleMutations[mutationPos].OutputMessage()}");
             generation.SubItems.Add($"{playerSize}");
             generation.SubItems.Add($"{playerHabitat}");
+            generation.SubItems.Add($"{possibleEvents[eventPos].Description()}");
 
             pastMutationsLabel.Items.Add(generation);
         }
@@ -631,7 +652,9 @@ namespace darwinGameV1
 
         public void SetPossibleEvents()
         {
-            possibleEvents.Add(new Event("hurricane", "A Hurricane Occured! "));
+            possibleEvents.Add(new Event("noEvent", "No Events! "));
+
+            possibleEvents.Add(new Event("naturalDisaster", "A Natural Disaster Occured! "));
             possibleEvents.Add(new Event("chanceEncounter", "A Chance Encounter! "));
             possibleEvents.Add(new Event("matingSeason", "It's Mating Season! "));
         }
@@ -646,13 +669,13 @@ namespace darwinGameV1
                 if (eventRun > 50)
                 {
                     Random eventGen = new Random();
-                    eventPos = eventGen.Next(0, possibleEvents.Count());
+                    eventPos = eventGen.Next(1, possibleEvents.Count());
 
                     string chosenEvent = possibleEvents[eventPos].EventName();
 
                     switch (chosenEvent)
                     {
-                        case "hurricane":
+                        case "naturalDisaster":
                             {
                                 GenNaturalDisastor();
                             }
@@ -672,14 +695,30 @@ namespace darwinGameV1
                     }
                 }
             }
+
+            else
+            {
+                eventPos = 0;
+            }
+
         }
 
         public void GenNaturalDisastor()
         {
-            Random disasterLevel = new Random();
-            int deaths = disasterLevel.Next(0, 4);
+            List<string> disasters = new List<string>();
 
-            eventLabel.Text += possibleEvents[eventPos].Description() + $" {deaths} {creatureName}(s) Died!";
+            disasters.Add("Hurricane");
+            disasters.Add("Tsunami");
+            disasters.Add("Earthquake");
+            disasters.Add("Volcano");
+
+            Random random = new Random();
+
+            int disaster = random.Next(0, disasters.Count());
+
+            int deaths = random.Next(0, 4);
+
+            eventLabel.Text += $"\n {possibleEvents[eventPos].Description()}" + $"\n A(n) {disasters[disaster]} Killed {deaths} {creatureName}(s)!";
 
             playerPopulation -= deaths;
 
@@ -693,7 +732,7 @@ namespace darwinGameV1
 
             playerPopulation += pop;
 
-            eventLabel.Text += possibleEvents[eventPos].Description() + $" {pop} New {creatureName}(s) are Born!";
+            eventLabel.Text += $"\n {possibleEvents[eventPos].Description()}" + $" {pop} New {creatureName}(s) are Born!";
         }
 
         public void GenChanceEncounter()
@@ -727,8 +766,8 @@ namespace darwinGameV1
                             playerDefence += def;
                             playerPopulation += pop;
 
-                            eventLabel.Text += possibleEvents[eventPos].Description() +
-                                $" You Met God! God Takes Pity on Thee: \n +{str} Strength; +{def} Defence; +{pop} Population.";
+                            eventLabel.Text += $"\n {possibleEvents[eventPos].Description()}" +
+                                $"\n You Met God! God Takes Pity on Thee: \n +{str} Strength; +{def} Defence; +{pop} Population.";
                         }
 
                         else
@@ -737,8 +776,8 @@ namespace darwinGameV1
                             playerDefence -= def;
                             playerPopulation -= pop;
 
-                            eventLabel.Text += possibleEvents[eventPos].Description() +
-                                $" You Met God! God Smites Thee: \n -{str} Strength; -{def} Defence; -{pop} Population.";
+                            eventLabel.Text += $"\n {possibleEvents[eventPos].Description()}" +
+                                $"\n You Met God! God Smites Thee: \n -{str} Strength; -{def} Defence; -{pop} Population.";
 
                             causeOfDeath = "Smitten by God??";
                         }
@@ -751,8 +790,8 @@ namespace darwinGameV1
                         def = random.Next(1, 4);
                         playerDefence += def;
 
-                        eventLabel.Text += possibleEvents[eventPos].Description() +
-                            $" You Met Saul Goodman! +{def} Legal Defence!";
+                        eventLabel.Text += $"\n   {possibleEvents[eventPos].Description()}" +
+                            $"\n You Met Saul Goodman! +{def} Legal Defence!";
                     }
                     break;
 
@@ -761,8 +800,8 @@ namespace darwinGameV1
                         pop = random.Next(1, 4);
                         playerPopulation -= pop;
 
-                        eventLabel.Text += possibleEvents[eventPos].Description() +
-                            $" You Met A Poacher! {pop} {creatureName}(s) Die!";
+                        eventLabel.Text += $"\n {possibleEvents[eventPos].Description()}" +
+                            $"\n You Met A Poacher! {pop} {creatureName}(s) Die!";
 
                         causeOfDeath = "Poached!";
                     }
@@ -775,7 +814,9 @@ namespace darwinGameV1
                             str = random.Next(1, 4);
                             playerStrength += str;
 
-                            eventLabel.Text += possibleEvents[eventPos].Description() + $" Ƴㄖᙀ ᙏ乇Ʈ Ʈ卄ᙓ ᙅ尺ᙓ卂Ʈㄩᖇ乇...";
+                            eventLabel.Text += $"\n {possibleEvents[eventPos].Description()}" 
+                                + $"\n Ƴㄖᙀ ᙏ乇Ʈ Ʈ卄ᙓ ᙅ尺ᙓ卂Ʈㄩᖇ乇...";
+
                             eventLabel.Text += "\n\n ꒐ꋖ ꒒꒐ꈵꑀꈜ ꐔꊿꌈ" + $"\n You Feel Stronger in the Morning. +{str} Strength!";
                         }
 
@@ -784,7 +825,9 @@ namespace darwinGameV1
                             pop = random.Next(1, 3);
                             playerPopulation -= pop;
 
-                            eventLabel.Text += possibleEvents[eventPos].Description() + $" Ƴㄖᙀ ᙏ乇Ʈ Ʈ卄ᙓ ᙅ尺ᙓ卂Ʈㄩᖇ乇...";
+                            eventLabel.Text += $"\n {possibleEvents[eventPos].Description()}" 
+                                + $"\n Ƴㄖᙀ ᙏ乇Ʈ Ʈ卄ᙓ ᙅ尺ᙓ卂Ʈㄩᖇ乇...";
+
                             eventLabel.Text += "\n\n Ꙇㄒ ᗪO乇ᔑ几'ㄒ ㄥꙆҜᙓ Ƴㄖᙀ " + $"\n {pop} {creatureName} Vanish Without a Trace...";
 
                             int deathCard = random.Next(0, 3);
@@ -812,7 +855,7 @@ namespace darwinGameV1
                         playerStrength += 5;
                         playerDefence += 5;
 
-                        eventLabel.Text += possibleEvents[eventPos].Description() + $"You met Thanos! ";
+                        eventLabel.Text += possibleEvents[eventPos].Description() + $"\n You met Thanos! ";
                         eventLabel.Text += "\n\n Watching Your Family Turn to Dust Strengthens Your Resolve " + "\n 0.5x Population, +5 Strength, +5 Defence. ";
 
                         causeOfDeath = "Snapped Away!";
@@ -827,7 +870,7 @@ namespace darwinGameV1
                 if (random.Next(0, 100) < 25)
                 {
                     playerPopulation = 1;
-                    eventLabel.Text += " You Escaped Extincion By a Hair!";
+                    eventLabel.Text += "\n You Escaped Extincion By a Hair!";
                 }
             }
         }

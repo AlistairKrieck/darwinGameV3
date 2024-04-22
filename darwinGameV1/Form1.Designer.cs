@@ -52,16 +52,16 @@
             this.nameBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameBoxLabel = new System.Windows.Forms.Label();
+            this.pastEventLabel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // startLabel
             // 
             this.startLabel.BackColor = System.Drawing.Color.Transparent;
             this.startLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.startLabel.Location = new System.Drawing.Point(338, 502);
-            this.startLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.startLabel.Location = new System.Drawing.Point(163, 326);
             this.startLabel.Name = "startLabel";
-            this.startLabel.Size = new System.Drawing.Size(547, 54);
+            this.startLabel.Size = new System.Drawing.Size(499, 35);
             this.startLabel.TabIndex = 1;
             this.startLabel.Text = "Press to Enter Start!";
             this.startLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -71,10 +71,9 @@
             this.playerStrengthLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerStrengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.playerStrengthLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.playerStrengthLabel.Location = new System.Drawing.Point(18, 14);
-            this.playerStrengthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.playerStrengthLabel.Location = new System.Drawing.Point(12, 9);
             this.playerStrengthLabel.Name = "playerStrengthLabel";
-            this.playerStrengthLabel.Size = new System.Drawing.Size(276, 54);
+            this.playerStrengthLabel.Size = new System.Drawing.Size(184, 35);
             this.playerStrengthLabel.TabIndex = 2;
             this.playerStrengthLabel.Text = "playerStrengthLabel";
             // 
@@ -83,10 +82,9 @@
             this.playerDefenceLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerDefenceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.playerDefenceLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.playerDefenceLabel.Location = new System.Drawing.Point(18, 68);
-            this.playerDefenceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.playerDefenceLabel.Location = new System.Drawing.Point(12, 44);
             this.playerDefenceLabel.Name = "playerDefenceLabel";
-            this.playerDefenceLabel.Size = new System.Drawing.Size(276, 54);
+            this.playerDefenceLabel.Size = new System.Drawing.Size(184, 35);
             this.playerDefenceLabel.TabIndex = 3;
             this.playerDefenceLabel.Text = "playerDefenceLabel";
             // 
@@ -94,10 +92,9 @@
             // 
             this.environmentStrengthLabel.BackColor = System.Drawing.Color.Transparent;
             this.environmentStrengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.environmentStrengthLabel.Location = new System.Drawing.Point(906, 14);
-            this.environmentStrengthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.environmentStrengthLabel.Location = new System.Drawing.Point(604, 9);
             this.environmentStrengthLabel.Name = "environmentStrengthLabel";
-            this.environmentStrengthLabel.Size = new System.Drawing.Size(276, 54);
+            this.environmentStrengthLabel.Size = new System.Drawing.Size(184, 35);
             this.environmentStrengthLabel.TabIndex = 5;
             this.environmentStrengthLabel.Text = "environmentStrengthLabel";
             this.environmentStrengthLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -106,10 +103,9 @@
             // 
             this.environmentDefenceLabel.BackColor = System.Drawing.Color.Transparent;
             this.environmentDefenceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.environmentDefenceLabel.Location = new System.Drawing.Point(906, 68);
-            this.environmentDefenceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.environmentDefenceLabel.Location = new System.Drawing.Point(604, 44);
             this.environmentDefenceLabel.Name = "environmentDefenceLabel";
-            this.environmentDefenceLabel.Size = new System.Drawing.Size(276, 54);
+            this.environmentDefenceLabel.Size = new System.Drawing.Size(184, 35);
             this.environmentDefenceLabel.TabIndex = 6;
             this.environmentDefenceLabel.Text = "environmentDefenceLabel";
             this.environmentDefenceLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -119,10 +115,9 @@
             this.playerDietTypeLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerDietTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.playerDietTypeLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.playerDietTypeLabel.Location = new System.Drawing.Point(911, 158);
-            this.playerDietTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.playerDietTypeLabel.Location = new System.Drawing.Point(607, 103);
             this.playerDietTypeLabel.Name = "playerDietTypeLabel";
-            this.playerDietTypeLabel.Size = new System.Drawing.Size(276, 54);
+            this.playerDietTypeLabel.Size = new System.Drawing.Size(184, 35);
             this.playerDietTypeLabel.TabIndex = 8;
             this.playerDietTypeLabel.Text = "dietTypeLabel";
             this.playerDietTypeLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -137,13 +132,13 @@
             this.pastPopulationLabel,
             this.mutationLabel,
             this.pastSizeLabel,
-            this.pastHabitatLabel});
+            this.pastHabitatLabel,
+            this.pastEventLabel});
             this.pastMutationsLabel.HideSelection = false;
-            this.pastMutationsLabel.Location = new System.Drawing.Point(18, 342);
-            this.pastMutationsLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pastMutationsLabel.Location = new System.Drawing.Point(12, 222);
             this.pastMutationsLabel.MultiSelect = false;
             this.pastMutationsLabel.Name = "pastMutationsLabel";
-            this.pastMutationsLabel.Size = new System.Drawing.Size(298, 330);
+            this.pastMutationsLabel.Size = new System.Drawing.Size(200, 216);
             this.pastMutationsLabel.TabIndex = 11;
             this.pastMutationsLabel.UseCompatibleStateImageBehavior = false;
             this.pastMutationsLabel.View = System.Windows.Forms.View.Details;
@@ -188,21 +183,19 @@
             this.playerPopulationLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerPopulationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.playerPopulationLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.playerPopulationLabel.Location = new System.Drawing.Point(18, 122);
-            this.playerPopulationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.playerPopulationLabel.Location = new System.Drawing.Point(12, 79);
             this.playerPopulationLabel.Name = "playerPopulationLabel";
-            this.playerPopulationLabel.Size = new System.Drawing.Size(276, 54);
+            this.playerPopulationLabel.Size = new System.Drawing.Size(184, 35);
             this.playerPopulationLabel.TabIndex = 12;
             this.playerPopulationLabel.Text = "playerPopulationLabel";
             // 
             // kLabel
             // 
             this.kLabel.BackColor = System.Drawing.Color.Transparent;
-            this.kLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.kLabel.Location = new System.Drawing.Point(784, 502);
-            this.kLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.kLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.kLabel.Location = new System.Drawing.Point(505, 244);
             this.kLabel.Name = "kLabel";
-            this.kLabel.Size = new System.Drawing.Size(403, 54);
+            this.kLabel.Size = new System.Drawing.Size(286, 62);
             this.kLabel.TabIndex = 13;
             this.kLabel.Text = "Press K to Move On to Next Generation!";
             this.kLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -212,10 +205,9 @@
             this.playerHabitatLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerHabitatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.playerHabitatLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.playerHabitatLabel.Location = new System.Drawing.Point(911, 198);
-            this.playerHabitatLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.playerHabitatLabel.Location = new System.Drawing.Point(607, 129);
             this.playerHabitatLabel.Name = "playerHabitatLabel";
-            this.playerHabitatLabel.Size = new System.Drawing.Size(276, 54);
+            this.playerHabitatLabel.Size = new System.Drawing.Size(184, 35);
             this.playerHabitatLabel.TabIndex = 14;
             this.playerHabitatLabel.Text = "playerHabitatLabel";
             this.playerHabitatLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -225,10 +217,9 @@
             this.playerSizeLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.playerSizeLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.playerSizeLabel.Location = new System.Drawing.Point(18, 176);
-            this.playerSizeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.playerSizeLabel.Location = new System.Drawing.Point(12, 114);
             this.playerSizeLabel.Name = "playerSizeLabel";
-            this.playerSizeLabel.Size = new System.Drawing.Size(276, 54);
+            this.playerSizeLabel.Size = new System.Drawing.Size(184, 35);
             this.playerSizeLabel.TabIndex = 15;
             this.playerSizeLabel.Text = "playerSizeLabel";
             // 
@@ -237,10 +228,9 @@
             this.mutationMessageLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mutationMessageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.mutationMessageLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.mutationMessageLabel.Location = new System.Drawing.Point(322, 14);
-            this.mutationMessageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.mutationMessageLabel.Location = new System.Drawing.Point(215, 9);
             this.mutationMessageLabel.Name = "mutationMessageLabel";
-            this.mutationMessageLabel.Size = new System.Drawing.Size(563, 126);
+            this.mutationMessageLabel.Size = new System.Drawing.Size(375, 82);
             this.mutationMessageLabel.TabIndex = 16;
             this.mutationMessageLabel.Text = "mutationMessageLabel";
             this.mutationMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,10 +240,9 @@
             this.eventLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.eventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.eventLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.eventLabel.Location = new System.Drawing.Point(281, 150);
-            this.eventLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eventLabel.Location = new System.Drawing.Point(187, 98);
             this.eventLabel.Name = "eventLabel";
-            this.eventLabel.Size = new System.Drawing.Size(633, 179);
+            this.eventLabel.Size = new System.Drawing.Size(422, 116);
             this.eventLabel.TabIndex = 17;
             this.eventLabel.Text = "eventLabel";
             this.eventLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,9 +250,10 @@
             // nameBox
             // 
             this.nameBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nameBox.Location = new System.Drawing.Point(427, 342);
+            this.nameBox.Location = new System.Drawing.Point(285, 222);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(357, 26);
+            this.nameBox.Size = new System.Drawing.Size(239, 20);
             this.nameBox.TabIndex = 18;
             this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -272,10 +262,9 @@
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.nameLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.nameLabel.Location = new System.Drawing.Point(18, 256);
-            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameLabel.Location = new System.Drawing.Point(12, 166);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(255, 54);
+            this.nameLabel.Size = new System.Drawing.Size(170, 35);
             this.nameLabel.TabIndex = 19;
             this.nameLabel.Text = "nameLabel";
             // 
@@ -283,18 +272,23 @@
             // 
             this.nameBoxLabel.AutoSize = true;
             this.nameBoxLabel.BackColor = System.Drawing.Color.Transparent;
-            this.nameBoxLabel.Location = new System.Drawing.Point(541, 385);
+            this.nameBoxLabel.Location = new System.Drawing.Point(359, 255);
+            this.nameBoxLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameBoxLabel.Name = "nameBoxLabel";
-            this.nameBoxLabel.Size = new System.Drawing.Size(115, 20);
+            this.nameBoxLabel.Size = new System.Drawing.Size(77, 13);
             this.nameBoxLabel.TabIndex = 20;
             this.nameBoxLabel.Text = "nameBoxLabel";
             // 
+            // pastEventLabel
+            // 
+            this.pastEventLabel.Width = 150;
+            // 
             // darwin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.nameBoxLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.nameBox);
@@ -313,7 +307,6 @@
             this.Controls.Add(this.startLabel);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "darwin";
             this.Text = "Darwin";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.darwin_Paint);
@@ -350,6 +343,7 @@
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label nameBoxLabel;
+        private System.Windows.Forms.ColumnHeader pastEventLabel;
     }
 }
 
