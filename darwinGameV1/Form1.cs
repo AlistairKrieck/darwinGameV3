@@ -38,6 +38,14 @@ namespace darwinGameV1
 
     //REBALANCE MUTATIONS <- Still Big
 
+    //MAKE NEGATIVE EVENTS MORE COMMON LATER IN
+    //eventRun = eventGen.Next(0, currentGen)
+    //if(eventRun > currentGen - 10)
+    //  RunNegativeEvent();
+    //{
+
+    //^ smth like that ^
+
 
     public partial class darwin : Form
     {
@@ -361,7 +369,7 @@ namespace darwinGameV1
                 mutationPos = mutationRoll.Next(0, possibleMutations.Count() - 1);
                 string mutName = possibleMutations[mutationPos].MutationName();
 
-                CheckMutationPossibility(mutationPos, mutName);
+                CheckMutationPossibility();
             }
 
             else
@@ -370,7 +378,7 @@ namespace darwinGameV1
             }
         }
 
-        public void CheckMutationPossibility(int m, string mutName)
+        public void CheckMutationPossibility()
         {
             bool mutPossible = false;
 
@@ -382,27 +390,27 @@ namespace darwinGameV1
             //    appendageBuff = false;
             //} //UPDATE
 
-            if (possibleMutations[m].WaterOnly() == true && playerHabitat == "aquatic")
+            if (possibleMutations[mutationPos].WaterOnly() == true && playerHabitat == "aquatic")
             {
-                ChangeStats(m);
+                ChangeStats(mutationPos);
                 mutPossible = true;
             }
 
-            else if (possibleMutations[m].LandOnly() == true && playerHabitat == "land-based")
+            else if (possibleMutations[mutationPos].LandOnly() == true && playerHabitat == "land-based")
             {
-                ChangeStats(m);
+                ChangeStats(mutationPos);
                 mutPossible = true;
             }
 
             else if (playerHabitat == "semi-aquatic")
             {
-                ChangeStats(m);
+                ChangeStats(mutationPos);
                 mutPossible = true;
             }
 
-            else if (possibleMutations[m].WaterOnly() == false && possibleMutations[m].LandOnly() == false)
+            else if (possibleMutations[mutationPos].WaterOnly() == false && possibleMutations[mutationPos].LandOnly() == false)
             {
-                ChangeStats(m);
+                ChangeStats(mutationPos);
                 mutPossible = true;
             }
 
